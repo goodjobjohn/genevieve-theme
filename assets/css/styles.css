@@ -1,8 +1,6 @@
 @import "tailwindcss/base";
-/*
- * uncomment if adding custom base styles
+
 @import "./custom-base-styles.css";
-*/
 
 @import "tailwindcss/components";
 /*
@@ -16,8 +14,41 @@
 @import "./custom-utilities.css";
 */
 
-
 /* admin bar fix */
 body.admin-bar {
     max-height: calc(100vh - 32px);
+}
+* {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Menus */
+#nav-wrapper {
+    @apply translate-x-[-100vw] xl:transform-none;
+    &.show-menu {
+        @apply translate-x-[0] xl:transform-none;
+        transition: all 200ms;
+    }
+}
+
+#menu-main {
+    @apply text-sm;
+    @apply md:flex md:flex-row md:justify-between md:items-center md:list-none;
+    li {
+        padding: 0 1rem;
+    }
+    a {
+        @apply hover:underline underline-offset-4;
+    }
+}
+.current_page_item {
+    @apply underline underline-offset-4;
+}
+
+#menu-footer-left {
+    @apply flex;
+}
+
+#menu-footer-right {
+    @apply flex;
 }

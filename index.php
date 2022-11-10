@@ -12,7 +12,7 @@
         <p class="mt-4 text-sm">To test browser sync in development mode ensure the following:</p>
         <code class="bg-slate-800 inline-block px-4 py-1 mt-1 text-xs text-left text-gray-200">
             <p class="my-2">
-                <span class="block text-gray-500">// define IS_VITE_DEVELOPMENT in functions or wp-config.php</span>
+                <span class="block text-red-500">// define IS_VITE_DEVELOPMENT in functions or wp-config.php</span>
                 define('IS_VITE_DEVELOPMENT', TRUE);
             </p>
             <p class="my-2">
