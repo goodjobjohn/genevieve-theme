@@ -27,7 +27,7 @@ $subheading = get_field("subheading");
     <!-- Carousel -->
     <div class="w-full mx-auto">
         <div class="swiper-container loading">
-            <div class="swiper-wrapper h-[65vh]">
+            <div class="swiper-wrapper">
                 <?php while (have_rows('slide')) : the_row(); ?>
                     <?php
                     $image = get_sub_field('image');
