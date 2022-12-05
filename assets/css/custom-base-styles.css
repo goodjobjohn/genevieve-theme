@@ -1,8 +1,24 @@
 html {
     font-family: "Maison Neue", sans-serif;
+    font-size: 16px;
+}
+body {
+    @apply text-sm leading-[20px];
+}
+h1 {
+    @apply text-3xl;
+}
+h2 {
+    @apply text-2xl;
+}
+h3 {
+    @apply text-xl;
 }
 h1,
 h2,
 h3 {
-    font-family: "Domaine Display Regular", serif;
+    @apply tracking-wider my-lg;
+}
+p {
+    @apply my-md;
 }

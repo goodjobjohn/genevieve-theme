@@ -7,7 +7,7 @@ $heading = get_field("heading");
 $subheading = get_field("subheading");
 ?>
 
-<section class="carousel relative bg-white overflow-hidden" id="<?= get_row_layout() ?>">
+<section class="carousel relative bg-white " id="<?= get_row_layout() ?>">
 
 
     <!-- Heading -->
@@ -26,22 +26,22 @@ $subheading = get_field("subheading");
 
     <!-- Carousel -->
     <div class="w-full mx-auto">
-        <div class="swiper-container loading">
-            <div class="swiper-wrapper">
+        <div class="swiper-container loading overflow-hidden">
+            <div class="swiper-wrapper ">
                 <?php while (have_rows('slide')) : the_row(); ?>
                     <?php
                     $image = get_sub_field('image');
                     $focus = get_sub_field('focus');
                     ?>
-                    <div class="swiper-slide" style="background-image:url(<?php echo wp_get_attachment_image_url($image, 'full'); ?>)">
-                        <img src="<?php echo wp_get_attachment_image_url($image, 'full'); ?>" class="entity-img" />
+                    <div class="swiper-slide">
+                        <img src="<?php echo wp_get_attachment_image_url($image, 'full'); ?>" class="w-full object-cover aspect-gold max-h-[70vh]" />
 
                     </div>
                 <?php endwhile; ?>
             </div>
 
             <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination !-bottom-[40px]"></div>
             <!-- If we need navigation buttons -->
             <!-- <div class="swiper-button-prev swiper-button-white hidden"></div>
             <div class="swiper-button-next swiper-button-white hidden"></div> -->

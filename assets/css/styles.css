@@ -14,8 +14,13 @@
 body.admin-bar {
     max-height: calc(100vh - 32px);
 }
-* {
+/* * {
     border: 1px solid rgba(0, 0, 0, 0.1);
+} */
+
+/* fixes */
+.wp-block-separator {
+    @apply border-b-0 opacity-20;
 }
 
 /* Menus */
@@ -30,19 +35,20 @@ body.admin-bar {
 #menu-main {
     @apply text-sm;
     @apply md:flex md:flex-row md:justify-between md:items-center md:list-none;
-    li {
-        padding: 0 1rem;
-    }
+
     a {
-        @apply hover:underline underline-offset-4;
+        @apply px-4 transition-opacity duration-300;
     }
-}
-.current_page_item {
-    @apply underline underline-offset-4;
+    .current_page_item a {
+        @apply underline underline-offset-4;
+    }
 }
 
 #menu-footer-left {
-    @apply flex;
+    @apply flex z-50;
+    a {
+        @apply px-4 transition-opacity duration-300 hover:opacity-50;
+    }
 }
 
 #menu-footer-right {
