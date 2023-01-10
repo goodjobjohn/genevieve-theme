@@ -2,4 +2,10 @@
     .btn {
         @apply bg-blue-600 text-white rounded-lg py-2 px-10 hover:bg-blue-500 uppercase cursor-pointer transition-colors;
     }
+
+    #testimonials {
+        .carousel__dots {
+            display: none;
+        }
+    }
 }

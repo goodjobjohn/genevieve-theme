@@ -31,7 +31,7 @@ if (!empty($block['align'])) {
 $count = count(get_field('column')); // number of columns
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> my-md container relative my-lg">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> container relative my-lg">
     <div class="grid grid-cols-<?= $count; ?> gap-lg">
         <?php if (have_rows('column')) : ?>
             <?php while (have_rows('column')) : the_row(); ?>

@@ -6,49 +6,27 @@ if (!defined('ABSPATH'))
 
 // funtions.php is empty so you can easily track what code is needed in order to Vite + Tailwind JIT run well
 
-
 // Main switch to get fontend assets from a Vite dev server OR from production built folder
 // it is recommeded to move it into wp-config.php
-define('IS_VITE_DEVELOPMENT', true);
+define('IS_VITE_DEVELOPMENT', false);
 
 
 include "inc/inc.vite.php";
+include "inc/projects.php"; // Custom post type for projects
+include "inc/menus.php";
+include "inc/theme-update.php";
 
+// Snippets
+include "inc/snippets/allow-svg.php";
+include "inc/snippets/remove-comments.php";
+include "inc/snippets/disable-attachment-pages.php";
+include "inc/snippets/clean-head.php";
 
-// Add main menu
-function register_header_menus()
-{
-    register_nav_menus(
-        array(
-            'main-menu' => __('Main Menu'),
-        )
-    );
-}
-add_action('init', 'register_header_menus');
-
-// Add footer menu
-function register_footer_left_menus()
-{
-    register_nav_menus(
-        array(
-            'footer-left-menu' => __('Footer Left Menu'),
-        )
-    );
-}
-add_action('init', 'register_footer_left_menus');
-
-function register_footer_right_menus()
-{
-    register_nav_menus(
-        array(
-            'footer-right-menu' => __('Footer Right Menu'),
-        )
-    );
-}
-add_action('init', 'register_footer_right_menus');
 
 // Add theme support for custom logo
 add_theme_support('custom-logo');
+add_theme_support('post-thumbnails');
+add_theme_support('title-tag');
 
 /**
  * Enqueue theme assets.
@@ -71,3 +49,7 @@ function tailpress_enqueue_scripts()
     // wp_enqueue_script('aos', 'https://unpkg.com/aos@next/dist/aos.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'tailpress_enqueue_scripts');
+
+
+remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');

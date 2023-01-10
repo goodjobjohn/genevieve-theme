@@ -1,0 +1,21 @@
+/* home slider */
+.home .carousel__nav {
+    display: none;
+}
+
+.page-template-page-media {
+    .carousel__button.is-next {
+        top: 100%;
+        transform: none;
+    }
+    .carousel__button.is-prev {
+        top: 100%;
+        right: 40px;
+        left: auto;
+        transform: none;
+    }
+    .carousel__button {
+        height: 68px;
+        width: 68px;
+    }
+}

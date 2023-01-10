@@ -1,0 +1,11 @@
+.frm_primary_label {
+    @apply !text-green uppercase !text-[10px] tracking-widest;
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+    @apply !rounded-none;
+}
+.frm_button_submit {
+    @apply !bg-green !border-none !rounded-none;
+}

@@ -9,3 +9,9 @@ body {
         @apply underline;
     }
 }
+.text-meta {
+    @apply font-maison tracking-[1px] text-xxs;
+}
+.no-link > a {
+    cursor: default;
+}

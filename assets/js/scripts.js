@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //
-// Navigation toggle
-//
+// Primary Menu
+// toggle mobile menu on click
 window.addEventListener("load", function () {
     let main_navigation = document.querySelector("#nav-wrapper");
     document
@@ -18,16 +18,13 @@ window.addEventListener("load", function () {
 
 // drop all menu items opacity on hover except for current hovered item
 const menuItems = document.querySelectorAll("#menu-main a");
+const activeItem = document.querySelector(".current_page_item a");
+
 menuItems.forEach((item) => {
     item.addEventListener("mouseover", function () {
-        menuItems.forEach((item) => {
-            item.classList.add("opacity-50");
-        });
-        this.classList.remove("opacity-50");
+        activeItem.classList.add("!opacity-50");
     });
     item.addEventListener("mouseout", function () {
-        menuItems.forEach((item) => {
-            item.classList.remove("opacity-50");
-        });
+        activeItem.classList.remove("!opacity-50");
     });
 });

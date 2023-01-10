@@ -13,6 +13,9 @@ module.exports = {
         "text-center",
         "min-w-0",
         "opacity-50",
+        "!opacity-50",
+        "font-maison",
+        "font-domaine",
         //{
         //  pattern: /text-(white|black)-(200|500|800)/
         //}
@@ -20,6 +23,7 @@ module.exports = {
     theme: {
         fontFamily: {
             maison: ["Maison Neue", "sans-serif"],
+            domaine: ["Domaine Display", "sans-serif"],
         },
         colors: {
             green: "#888676",
@@ -28,6 +32,9 @@ module.exports = {
             black: "#000000",
         },
         extend: {
+            fontSize: {
+                xxs: "0.625rem", // 10px
+            },
             spacing: {
                 xs: "0.313rem", // 5px
                 sm: "0.625rem", //10px
@@ -36,7 +43,10 @@ module.exports = {
                 xl: "5rem", // 80px
             },
             aspectRatio: {
-                gold: "16 / 10",
+                gold: "16 / 10", // aspect-gold - close to golden ratio
+            },
+            screens: {
+                "3xl": "1900px",
             },
         },
         plugins: [],

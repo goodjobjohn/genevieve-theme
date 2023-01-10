@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",function(){console.log("js executed...")});window.addEventListener("load",function(){let e=document.querySelector("#nav-wrapper");document.querySelector("#primary-menu-toggle").addEventListener("click",function(n){n.preventDefault(),e.classList.toggle("show-menu")})});
