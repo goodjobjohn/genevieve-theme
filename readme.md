@@ -1,4 +1,4 @@
-# Custom Wordpress Theme for Geneveive Wallis
+# Custom Wordpress Theme for Geneveive
 
 -   see readme-orig.md for theme details
 
