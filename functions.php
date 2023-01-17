@@ -14,7 +14,7 @@ define('IS_VITE_DEVELOPMENT', false);
 include "inc/inc.vite.php";
 include "inc/projects.php"; // Custom post type for projects
 include "inc/menus.php";
-include "inc/theme-update.php";
+// include "inc/theme-update.php";
 
 // Snippets
 include "inc/snippets/allow-svg.php";
@@ -53,3 +53,20 @@ add_action('wp_enqueue_scripts', 'tailpress_enqueue_scripts');
 
 remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+
+
+require 'inc/plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/goodjobjohn/genevieve-theme',
+    __FILE__,
+    'genevieve-theme'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+// $myUpdateChecker->setAuthentication('your-token-here');
